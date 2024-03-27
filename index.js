@@ -13,6 +13,10 @@ app.use(cors());
 app.use("/api/user", userRoutes);
 app.use("/api/task", taskRoutes);
 
+app.get("/", (req, res) => {
+  res.json("Hello WORLD");
+});
+
 app.listen(process.env.PORT || 3000, async () => {
   await connection;
   console.log("database is conencted");
